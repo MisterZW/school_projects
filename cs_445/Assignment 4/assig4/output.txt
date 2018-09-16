@@ -1,0 +1,173 @@
+---------
+Height: 4
+Nodes: 10
+Max is: 90
+Min is: 15
+Root node 90 has rank: 9
+Value 33 has rank: 3
+
+Index -1 out of range for tree
+Rank 0 item is 15
+Rank 1 item is 20
+Rank 2 item is 30
+Rank 3 item is 40
+
+Tree is NOT FULL
+Tree is NOT A BST
+Tree is NOT 0 balanced
+Tree is 1 balanced
+Tree is 2 balanced
+Inorder the data is:
+40 50 65 75 90 20 15 60 80 30 
+
+---------
+Height: 5
+Nodes: 13
+Max is: 85
+Min is: 10
+Root node 50 has rank: 6
+Value 33 has rank: 6
+
+Index -1 out of range for tree
+Rank 0 item is 10
+Rank 1 item is 15
+Rank 2 item is 17
+Rank 3 item is 20
+
+Tree is NOT FULL
+Tree is a BST
+Tree is NOT 0 balanced
+Tree is NOT 1 balanced
+Tree is 2 balanced
+Inorder the data is:
+10 15 17 20 25 30 50 55 60 70 75 80 85 
+
+---------
+Height: 4
+Nodes: 13
+Max is: 85
+Min is: 10
+Root node 50 has rank: 6
+Value 33 has rank: 6
+
+Index -1 out of range for tree
+Rank 0 item is 10
+Rank 1 item is 15
+Rank 2 item is 17
+Rank 3 item is 20
+
+Tree is NOT FULL
+Tree is a BST
+Tree is NOT 0 balanced
+Tree is 1 balanced
+Tree is 2 balanced
+Inorder the data is:
+10 15 17 20 25 30 50 55 60 70 75 80 85 
+
+---------
+Height: 3
+Nodes: 7
+Max is: 80
+Min is: 5
+Root node 50 has rank: 4
+Value 33 has rank: 3
+
+Index -1 out of range for tree
+Rank 0 item is 5
+Rank 1 item is 10
+Rank 2 item is 15
+Rank 3 item is 40
+
+Tree is FULL
+Tree is NOT A BST
+Tree is 0 balanced
+Tree is 1 balanced
+Tree is 2 balanced
+Inorder the data is:
+5 80 15 50 40 70 10 
+
+---------
+Height: 15
+Nodes: 15
+Max is: 15
+Min is: 1
+Root node 1 has rank: 0
+Value 33 has rank: 15
+
+Index -1 out of range for tree
+Rank 0 item is 1
+Rank 1 item is 2
+Rank 2 item is 3
+Rank 3 item is 4
+
+Tree is NOT FULL
+Tree is a BST
+Tree is NOT 0 balanced
+Tree is NOT 1 balanced
+Tree is NOT 2 balanced
+Inorder the data is:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+
+---------
+Height: 4
+Nodes: 15
+Max is: 15
+Min is: 1
+Root node 8 has rank: 7
+Value 33 has rank: 15
+
+Index -1 out of range for tree
+Rank 0 item is 1
+Rank 1 item is 2
+Rank 2 item is 3
+Rank 3 item is 4
+
+Tree is FULL
+Tree is a BST
+Tree is 0 balanced
+Tree is 1 balanced
+Tree is 2 balanced
+Inorder the data is:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+
+---------
+Height: 4
+Nodes: 9
+Max is: Zippy
+Min is: Bogus
+Root node Outrageous has rank: 3
+
+Index -1 out of range for tree
+Rank 0 item is Bogus
+Rank 1 item is Esoteric
+Rank 2 item is Melancholy
+Rank 3 item is Outrageous
+
+Tree is NOT FULL
+Tree is a BST
+Tree is NOT 0 balanced
+Tree is NOT 1 balanced
+Tree is 2 balanced
+Inorder the data is:
+Bogus Esoteric Melancholy Outrageous Uncertainty Wacky Weasel Zany Zippy 
+
+---------
+Height: 4
+Nodes: 9
+Max is: Zippy
+Min is: Bogus
+Root node Uncertainty has rank: 4
+
+Index -1 out of range for tree
+Rank 0 item is Bogus
+Rank 1 item is Esoteric
+Rank 2 item is Melancholy
+Rank 3 item is Outrageous
+
+Tree is NOT FULL
+Tree is a BST
+Tree is NOT 0 balanced
+Tree is 1 balanced
+Tree is 2 balanced
+Inorder the data is:
+Bogus Esoteric Melancholy Outrageous Uncertainty Wacky Weasel Zany Zippy 

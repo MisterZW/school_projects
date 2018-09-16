@@ -1,0 +1,27 @@
+Bag 1 contains:
+Inigo Buttercup Fezzik Westley 
+
+Bag 2 contains:
+Inigo Fezzik Vizzini Humperdinck Rugen 
+
+Bag 3 contains:
+Rugen Humperdinck Vizzini Fezzik Inigo Westley Fezzik Buttercup Inigo 
+
+Bag 4 contains:
+Fezzik Inigo 
+
+Bag 5 contains:
+Buttercup Westley 
+
+Bag 6 contains:
+Vizzini Humperdinck Rugen 
+
+Bag 7 contains:
+Westley Fezzik Buttercup Inigo Inigo Buttercup Fezzik Westley Inigo Fezzik Vizzini Humperdinck Rugen 
+
+Bag 8 contains:
+Fezzik Inigo Westley Fezzik Buttercup Inigo Inigo Buttercup Fezzik Westley 
+
+Bag 9 contains:
+Westley Fezzik Buttercup Inigo 
+

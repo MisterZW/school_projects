@@ -1,0 +1,41 @@
+CS 0445 Assignment Information Sheet
+
+You must electronically submit an information sheet with every assignment. 
+Also be sure to submit all materials following the procedures described on the submission procedures page.
+
+Name: Zachary Whitney Assignment #: 3
+
+UserId: zdw9
+
+Lecture Day and Time: Tuesday & Thursday 1PM
+
+Recitation Day and Time: Tuesday 10AM
+
+Program Due Date: Monday, March 19nd (Extended to Wed, March 21st)
+
+Handed in Date: Friday, March 16th
+
+Source code (.java) file name(s):
+
+MyStringBuilder2.java, Assig3.java
+
+Input / output file name(s) (if applicable): N/A
+
+Does your program compile without error?: Yes
+
+If not, what is/are the error(s)?: N?A
+
+Does your program run without error?: Yes
+
+If not, what is/are the error(s) and which parts of your program run correctly?:
+
+N/A
+
+Additional comments (including problems and extra credit):
+
+________________________________________________________________
+
+________________________________________________________________
+
+________________________________________________________________
+

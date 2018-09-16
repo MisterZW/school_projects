@@ -1,0 +1,41 @@
+CS 0445 Assignment Information Sheet
+
+You must electronically submit an information sheet with every assignment. 
+Also be sure to submit all materials following the procedures described on the submission procedures page.
+
+Name: Zachary Whitney Assignment #: 1
+
+Lecture Day and Time: Tuesday & Thursday 1PM
+
+Recitation Day and Time: Tuesday 10AM
+
+Program Due Date: Friday, February 2nd
+
+Handed in Date: Monday, January 29th
+
+Source code (.java) file name(s):
+
+Blackjack.java, Assig1.java, Shoe.java, Player.java, RandIndexQueue.java,
+
+MyQ.java, Indexable.java, Shufflable.java, Card.java
+
+Input / output file name(s) (if applicable): N/A
+
+Does your program compile without error?: Yes
+
+If not, what is/are the error(s)?: N?A
+
+Does your program run without error?: Yes
+
+If not, what is/are the error(s) and which parts of your program run correctly?:
+
+N/A
+
+Additional comments (including problems and extra credit):
+
+________________________________________________________________
+
+________________________________________________________________
+
+________________________________________________________________
+

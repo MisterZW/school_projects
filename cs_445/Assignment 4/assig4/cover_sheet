@@ -1,0 +1,43 @@
+CS 0445 Assignment Information Sheet
+
+You must electronically submit an information sheet with every assignment. 
+Also be sure to submit all materials following the procedures described on the submission procedures page.
+
+Name: Zachary Whitney Assignment #: 4
+
+Lecture Day and Time: Tuesday & Thursday 1PM
+
+Recitation Day and Time: Tuesday 10AM
+
+Program Due Date: Monday, April 16th
+
+Handed in Date: Friday, April 13th
+
+Source code (.java) file name(s):
+
+Assig4.java
+
+MyTreePackage (BinaryNode.java, BinarySearchTree.java,
+BinaryTree.java, BinaryTreeInterface.java, ComparableBinaryTree.java, ComparableTreeInterface.java, 
+EmptyTreeException.java, SearchTreeInterface.java, TreeInterface.java, TreeIteratorInterface.java)
+
+StackAndQueuePackage (EmptyQueueException.java, LinkedQueue.java,
+LinkedStack.java, QueueInterface.java, StackInterface.java
+
+Input / output file name(s) (if applicable): 
+
+3 .dat files (not included)
+
+Does your program compile without error?: Yes
+
+If not, what is/are the error(s)?: N?A
+
+Does your program run without error?: Yes
+
+If not, what is/are the error(s) and which parts of your program run correctly?:
+
+N/A
+
+Additional comments (including problems and extra credit):
+This is the second (revised) version of my Assignment 4.
+It is functionally equivalent -- I just forgot to put the cover sheet in my zip file the first time.

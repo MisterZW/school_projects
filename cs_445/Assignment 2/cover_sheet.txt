@@ -1,0 +1,36 @@
+CS 0445 Assignment Information Sheet
+
+You must electronically submit an information sheet with every assignment. 
+Also be sure to submit all materials following the procedures described on the submission procedures page.
+
+Name: Zachary Whitney Assignment #: 2
+
+Lecture Day and Time: Tuesday & Thursday 1PM
+
+Recitation Day and Time: Tuesday 10AM
+
+Program Due Date: Friday, February 22nd
+
+Handed in Date: Thursday February 15th
+
+Source code (.java) file name(s):
+
+Assig2B.java, Assig2.java, MyStringBuilder.java
+
+Other files included:
+
+Writeup.txt, assig2graphs.xlsx
+
+Input / output file name(s) (if applicable): N/A
+
+Does your program compile without error?: Yes
+
+Does your program run without error?: Yes
+
+Additional comments (including problems and extra credit):
+
+Graphs for Part B are in assig2graphs.xlsx (attached)
+
+I also included the Java standard LinkedList in my tests for part B (see Writeup
+for more on this)
+

@@ -1,0 +1,30 @@
+CS 0445 Spring 2018
+Assignment 2 Part B (cont.)
+Zachary Whitney, zdw9, ID# 3320178
+Ramirez lecture T TH 1PM, Recitation T 10AM
+
+Algorithm Complexity Write-up
+
+NB: I included the standard Java LinkedList in my tests as a sanity check for my conclusions here.
+    (document requires text wrap to be enabled)
+
+Results for append(char c)
+
+The array-based StringBuilder performed the best, but both linked implementations performed reasonably well also. Unsurprisingly, the default String class performs very poorly at this task, especially as N grows in size (this is, after all, kind of the whole point of HAVING a StringBuilder).
+
+Results for delete(0, 1)
+
+The two linked implementations noticeably outperform the StringBuilder here, since they can adjust the front of the list in constant time whereas the StringBuilder has to shift all of its elements to delete from the front of the list. This operation is the big plus of using the linked list over an array. The String class performs terribly at this task as well, especially with large N.
+
+Results for insertAtMiddle()
+
+The StringBuilder is the best here by a very wide margin. Even though it has to shift half of the array's contents to accomplish this, it still comes way, way in the lead. The default String class does a very bad job at this, but as N gets bigger, both linked implementations begin to perform considerably WORSE even than String! This surprised me quite a bit, especially since the String's version of insert involved two concatenations of immutable objects and two calls to the substring() method. How could the LinkedList be doing even worse than that? 
+
+It was at this point that I included the default Java LinkedList in my tests to make sure I hadn't simply made a terrible mistake in my insert algorithm. However, though my algorithm was somewhat worse than the LinkedList's version, the LinkedList class was obviously choking almost as hard on this task as my class, confirming that it was not just crappy code from me. Jumping all over the place in memory through the LinkedList to locate the midpoint must be much more costly than shifting a contiguous structure. This causes the linked classes to perform much worse than a head-to-head "big Oh" comparison of the array to the linked list in terms of the number of key instructions involved would suggest. 
+
+Overall runtime/performance suggestion/winner
+
+There's a reason the default StringBuilder in Java uses a dynamic array. It offers more balanced performance than the linked implementation, which trades moderate gains in a few areas for heavy (ie., staggering, crippling, and possibly unacceptable) losses in others. For most use cases in our programs, the array-based version will outperform the linked version. There are probably cases where we want to manipulate the list front almost exclusively where a linked data structure would make sense, but we usually use a StringBuilder to add to the end, which the array is better at handling (even with the need to resize).
+
+
+
