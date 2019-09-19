@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			table {
+				text-align:center;
+				padding: 10px;
+				margin: 5px;
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+			th {
+				font-weight: bold;
+			}
+			th, td {
+				border: 1px solid black;
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table id='truth_table'>
+			<tr>
+				<% (1..size).each do |x| %>
+					<th><%=size-x%></th> 
+				<% end %>
+
+				<th>AND</th>
+				<th>OR</th>
+				<th>NAND</th>
+				<th>NOR</th>
+				<th>XOR</th>
+				<th>SINGLE</th>
+
+			</tr>
+
+			<% (0...binary_strings.size).each do |i| %>
+				<% string = binary_strings[i] %>
+				<tr>
+					<% (0...size).each do |x| %>
+						<% if string[x] == '0' %>
+							<td class='t'><%= f %></td> 
+						<% else %>
+							<td class='f'><%= t %></td>
+						<% end %>
+					<% end %>
+
+					<% values[i].each do |value| %>
+						<% if value %> <td class='t'><%=t%></td>
+						<% else %> <td class='f'><%=f%></td>
+						<% end %>
+					<% end %>
+
+				</tr>
+			<% end %>
+		</table>
+	<br />
+	<a href='/' id='return_link'>Return to Main Page</a>
+
+	</body>
+</html>

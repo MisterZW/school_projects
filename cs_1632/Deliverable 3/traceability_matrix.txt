@@ -1,0 +1,22 @@
+Traceability Matrix for zdw9_D3_system_tests (Katalon Test Suite)
+
+REQUIREMENT 1:	verify_true_input_label, verify_index_test_boxes, verify_submit_label, verify_size_input_label, verify_false_input_label
+
+REQUIREMENT 2: verify_index_return_link, verify_table_return_link, verify_invalid_page_return_link, verify_param_error_return_link
+
+REQUIREMENTS 3 & 4: test_invalid_true_symbol, test_invalid_false_symbol, test_negative_size, test_noninteger_size, test_too_small_size, test_same_TF_symbols
+
+REQUIREMENT 5: test_number_header_ordering, test_bool_header_ordering,
+test_custom_true_symbol, test_custom_false_symbol
+
+REQUIREMENT 6: test_and_TTTTT_true, test_and_TTTTF_false, test_or_FFFFT_true, test_or_FFFFF_false, test_NAND_TTTTT_false, test_NAND_TTTTF_true, test_NOR_FFFFT_false, test_NOR_FFFFF_true
+
+REQUIREMENT 7: verify_default_true_symbol, verify_default_false_symbol, verify_default_size
+
+REQUIREMENT 8: test_invalid_address
+
+IMPLICIT SYSTEM STABILITY: test_reject_size_50
+
+XOR EXTRA CREDIT TESTS: test_XOR_TFT_false, test_XOR_FFT_true 
+
+SINGLE EXTRA CREDIT TESTS: test_single_TFFT_false, test_single_FFFT_true

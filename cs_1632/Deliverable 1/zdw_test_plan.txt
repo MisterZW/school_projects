@@ -1,0 +1,247 @@
+Identifier: TEXT_DISPLAY_LAYOUT_TEST
+Test Case: 
+	This is a simple test to make sure the text box layouts are correctly formatted when starting the JBefunge IDE.
+Preconditions/Inputs: 
+	JBefunge has been properly compiled on the test environment, but is not running.
+Execution Steps: 
+	1) Execute the run.sh script in the directory where JBefunge is located to start JBefunge.
+Postconditions/Outputs: 
+	a) There shall be three text boxes in the GUI display. One shall be labeled Program Area, one shall be labeled Stack, and one shall be labeled Output.
+	b) The JBefunge IDE title should read "UNTITLED"
+
+Identifier: TEXT_DISPLAY_EDITABILITY_TEST
+Test Case: 
+	Ensure that users can edit the Program Area but not the Stack and Output displays in the GUI.
+Preconditions/Inputs: 
+	a) JBefunge is running
+	b) The Program Area, Stack, and Output fields are all blank.
+Execution Steps: 
+	1) Click anywhere in the Program Area text box.
+	2) Attempt to type "Program Area Test" into the corrosponding text field.
+	3) Click anywhere in the Stack text box.
+	4) Attempt to type "Stack Test" into the corrosponding text field.
+	5) Click anywhere in the Output text box.
+	6) Attempt to type "Output Test" into the corrosponding text field.
+Postconditions/Outputs:
+	The Program Area text field shall display "Program Area Test" whereas the other two text fields shall remain blank.
+
+Identifier: SAVE_NEW_FILE_TEST
+Test Case: 
+	Verify that JBefunge can save a file which does not yet exist with the "Save file" command.
+Preconditions/Inputs: 
+	a) File menu is operational. 
+	b) JBefunge is running and a blank, new (unnamed) file is open. 
+	c) User has write access to the Desktop.
+	d) No files on the Desktop exist named test.bf.
+Execution Steps: 
+	1) Type "TEST FILE" into the Program Area text field.
+	2) Click the File menu button.
+	3) Select the Save file option from the menu. 
+		Assertion: Save as menu should appear and prompt for a filename.
+	4) Navigate to the Desktop.
+	5) Type test.bf as the filename.
+	6) Click Save.
+Postconditions/Outputs: 
+	a) Assertion should occur as specified. 
+	b) Title bar for the GUI should now read the Desktop path followed by test.bf (i.e., it should no longer read UNTITLED).
+	c) The user desktop should contain a file named test.bf.
+	d) test.bf contents on disk should be "TEST FILE" (verify with known working text editor)
+
+Identifier: SAVE_EXISTING_FILE_TEST
+Test Case: 
+	Verify that JBefunge can save a file which already exists on disk with the "Save file" command.
+Preconditions/Inputs: 
+	a) File menu is operational. 
+	b) JBefunge is editing a blank file which has already been saved to disk with a known working method (e.g., created by the Unix touch command).
+	c) User has write permissions for the blank test file.
+Execution Steps: 
+	1) Type "TEST FILE" into the Program Area text field.
+	2) Click the File menu button.
+	3) Select the Save file option from the menu. 
+Postconditions/Outputs:
+	a) The system should save to the preexisting file without prompting for a filename.
+	b) File contents on disk should be "TEST FILE" (verify with known working text editor)
+
+Identifier: SAVE_AS_TEST
+Test Case: 
+	Verify that the Save As correctly prompts user for a filename and saves data to disk with that filename.
+Preconditions/Inputs: 
+	a) File menu is operational. 
+	b) JBefunge is running and a blank, new (unnamed) file is open. 
+	c) User has write access to the Desktop.
+	d) No files on the Desktop exist which are named test1.bf or test2.bf.
+Execution Steps: 
+	1) Type "TEST FILE" into the Program Area text field.
+	2) Click the File menu button.
+	3) Select the Save As file option from the menu. 
+		Assertion: Save as menu should appear and prompt for a filename.
+	4) Navigate to the Desktop.
+	5) Type test1.bf as the filename.
+	6) Click Save.
+	7) Repeat steps 2-4.
+	8) Type test2.bf as the filename this time.
+	9) Click Save.
+Postconditions/Outputs:
+	a) All assertions occur as specified.
+	b) The JBefunge editor title should list the filepath for the new file titled "test2.bf" (i.e. it should not read UNTITLED or test1.bf).
+	c) The Desktop should contain 2 new files named test1.bf and test2.bf.
+	d) Both file contents on disk should be "TEST FILE" (verify with known working text editor)
+
+Identifier: OPEN_FILE_TEST
+Test Case: 
+	Verify that JBefunge faithfully renders file data when opening an existing Befunge file.
+Preconditions/Inputs: 
+	a) JBefunge has just been run but no other actions have yet been taken.
+	b) A file called FizzBuzz.bf with known contents exists in a known disk location. 
+Execution Steps: 
+	1) Click the File menu button.
+	2) Click the Open file button.
+		Assertion: A file explorer GUI loads which allows the user to browse for the filepath.
+	3) Navigate to the Fizzbuzz.bf file and select it.
+	4) Click the Open button.
+Postconditions/Outputs:
+	a) Assertion should occur as specified.
+	b) The contents of the file shall be displayed in the Program Area field of the GUI.
+	c) The Stack and Output shall be blank.
+	d) The JBefunge editor title shall show the correct filepath and name of the FizzBuzz.bf file as its title (i.e, it should no longer be listed as "UNTITLED").
+
+Identifier: SAVE_REALLY_LONG_FILENAME_TEST  (THIS IS AN EDGE CASE TEST!)
+Test Case:
+	Verify that JBefunge appropriately handles user attempts to save a file with an extremely long filename.
+Preconditions/Outputs:
+	a) No files exist on the Desktop with a filename of the lowercase alphabet 10x over and a .txt extension.
+	b) JBefunge is properly compiled and set up in the test environment.
+	c) The test user has write permission to the Desktop.
+Execution Steps:
+	1) Execute the run.sh script in the /src directory where the JBefunge IDE is located.
+	2) Type "SAVE_REALLY_LONG_FILENAME_TEST" in the Program Area.
+	3) Click the File menu.
+	4) Click the Save file option.
+	5) Navigate to the Desktop in the File Explorer window.
+	6) Type a filename consisting of the entire lowercase alphabet repeated 10 times. Append .txt to the file. You can just copy and paste the alphabet to make this less onerous.
+	7) Click Save.
+Postconditions/Outputs:
+	The exact expected behavior here is not specified exactly in the requirements since it is reasonable to consider this a likely failure case in many test environments.
+
+	Success Conditions: 
+		a) Save feature works as expected -- the file is created successfully and the JBefunge IDE updates the IDE title to to new filepath.
+		b) The Operating System rejects the I/O operation because the filename is beyond its maximum allowed length, but the IDE handles the failure gracefully. Specifically, it shall minimally inform the user that an error occurred (ideally it would also specify what caused the error).
+	Failure Conditions: 
+		a) The save operation fails silently. That is, it appears to succeed, but does not actually create the file as specified with the correct contents.
+		b) The IDE crashes, data is corrupted, or something else astonishing occurs which is not a straightforward and expected result from this kind of operation.
+
+Identifier: RUN_SPEED_SMELL_TEST
+Test Case: 
+	Simple smoke test to make sure execution speeds are: run > walk > mosey.
+Preconditions/Inputs: 
+	a) JBefunge is running and test file Fizzbuzz.bf is opened but not running.
+Execution Steps: 
+	1) Click the Run button.
+	2) Wait for program to complete execution, making note of the execution speed.
+	3) Click the Walk button.
+	4) Wait for program to complete execution, making note of the execution speed.
+	5) Click the Mosey button.
+	6) Wait for program to complete execution, making note of the execution speed.
+Postconditions/Outputs:
+	a) Run shall take the shortest time to execute.
+	b) Mosey shall take the longest time to execute.
+	c) Walk shall take more time than Run but less time than Mosey to execute.
+	Note: A formal timing is not necessary for this test -- the timing differences must be clearly apparent. If they are not, this test shall be considered failed.
+
+Identifier: WALK_MOSEY_TIME_COMPARISON_TEST
+Test Case: 
+	Verify that Mosey executes roughly 10 times slower than Walk.
+Preconditions/Inputs: 
+	a) JBefunge is running and test file Fizzbuzz.bf is opened but not running.
+	b) Tester has a stopwatch or other external timer to user for testing. It must be possible to press the start button on the timer at the same time as beginning program execution. DO NOT use the timer function in JBefunge as it is part of the software under test!
+Execution Steps: 
+	1) Simutaneously press the start button of the external timer device and the Walk button in JBefunge.
+	2) On a best-effort basis, stop the timer when the FizzBuzz program terminates.
+	3) Record the elapsed time as WALK_TIME.
+	4) Reset the timer.
+	5) Simutaneously press the start button of the external timer device and the Mosey button in JBefunge.
+	6) On a best-effort basis, stop the timer when the FizzBuzz program terminates.
+	7) Record the elapsed time as MOSEY_TIME.
+	8) Calculate MOSEY_WALK_RATIO as (MOSEY_TIME / WALK_TIME), rounded to one decimal.
+Postconditions/Outputs:
+	PASSED SCENARIO: 7.5 <= MOSEY_WALK_RATIO <= 12.5
+	FAILED SCENARIO: The calculated ratio falls outside the specified bounds or the ratio cannot be derived due to some other error or failure.
+
+Identifier: STOP_BUTTON_DISABLED_TEST
+Test Case: 
+	Verify that stop button is enabled during program execution and disabled before and after execution.
+Preconditions/Inputs: 
+	JBefunge is running and test file Fizzbuzz.bf is opened but not running.
+Execution Steps: 
+		Assertion: The Stop Button should be disabled prior to executing the program.
+	1) Execute the program using the Run option.
+		Assertion: The Stop Button should become enabled during the program's execution.
+	2) Wait for the program to finish execution.
+		Assertion: The Stop Button should become disabled after the program's execution.
+	3) Repeat steps 1 & 2 with the Walk and Mosey execution speeds. 
+Postconditions/Outputs:
+	a) The Stop button should be disabled after all 3 run-speeds have been tested.
+	b) All assertions shall have occurred as specified during the test run for each run speed.
+
+Identifier: STOP_BUTTON_WORKS_TEST
+Test Case: Verify that the stop button correctly halts program execution.
+Preconditions/Inputs: 
+	a) JBefunge is running and test file Fizzbuzz.bf is opened but not running.
+	b) Stop button functionality is enabled during program execution. 
+Execution Steps: 
+	1) Execute the program using the Run option.
+	2) Press the Stop button before the program is able to finish execution.
+		Assertion: The stack and output areas shall stop changing and there shall be no cursor movement.
+	3) Repeat steps 1 & 2 with the Walk and Mosey execution speeds.
+Postconditions/Outputs:
+	All assertions shall have occurred as specified during the test run for each run speed.
+
+Identifier: CURSOR_DISPLAY_TEST
+Test Case: 
+	Verify that execution cursor displays while program runs and disappears after program termination.
+Preconditions/Inputs: 
+	JBefunge is running and test file HelloWorld.bf is opened but not running.
+Execution Steps: 
+	Assertion: The cursor should be disabled/not visible prior to executing the program.
+	1) Execute the program using the Run option.
+		Assertion: The cursor should become visible and move through the program source in the Program Area during the program's execution.
+	2) Wait for the program to finish execution.
+		Assertion: The cursor should become disabled/disappear after the program's execution.
+	3) Repeat steps 1 & 2 with the Walk and Mosey execution speeds. 
+	4) Repeat steps 1 & 2 by stepping through the progam execution. 
+Postconditions/Outputs:
+	a) The cursor should be disabled/disappear after each execution speed is tested.
+	b) All assertions shall have occurred as specified during the test run for each run speed.
+
+Identifier: CURSOR_COLORS_TEST
+Test Case: 
+	Verify that the cursor displays correctly in all six color options.
+	Note: This behavior is specified implicitly in the requirements.
+Preconditions/Inputs:
+	JBefunge is running and test file HelloWorld.bf is opened but not running. 
+Execution Steps: 
+	1) Select the Colors menu with the mouse.
+	2) Select the Red color option.
+	3) Click Run.
+		Assertion: The cursor in the Program Area should appear in the chosen color.
+	4) Wait for the execution to terminate.
+	5) Repeat steps 1 through 4 five times, each time substituting one of Yellow, Blue, Pink, Green, and Orange in for Red in Step 2.
+Postconditions/Outputs:
+	Assertion shall have occurred as specified for all six colors.
+
+Identifier: SWITCH_FILE_STEP_TEST (THIS IS AN EDGE CASE TEST)
+Test case:
+	Verify that opening a new file during Step execution does not corrupt the trace. 
+Preconditions/Inputs:
+	a) The JBefunge IDE has been downloaded and compiled on the test environment. 
+	b) The tester has access to test files Fizzbuzz.bf and HelloWorld.bf.
+Execution Steps:
+	1) Execute the run.sh script in the /src directory where the JBefunge IDE is located.
+	2) Click the File menu and select the Open file option.
+	3) Open Fizzbuzz.bf.
+	4) Click the Step button 30 times, noting the state of the Stack.
+	5) Click the File menu and select the Open file option.
+	6) Open HelloWorld.bf.
+	7) Click the Step button 30 times.
+Postconditions/Outputs:
+	The program shall have highlighted only those opcodes which are being executed by the IDE during the step procedure.

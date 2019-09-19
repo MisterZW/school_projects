@@ -1,0 +1,219 @@
+---FUN-MENUS TESTS---
+
+Identifier: DISPLAY_MENUS_TEST
+Description: 
+    Test that loads the JBefunge IDE and verifies that the only menu options
+    available are File, Color, and Options.
+Preconditions: 
+    The JBefunge IDE has been downloaded and compiled on the test environment.
+Execution Steps: 
+    1) Execute the run.sh script in the directory where the JBefunge IDE is located.
+Postconditions:
+    In the menu bar only File, Color, and Options should be visible.
+
+Identifier: FILE_MENU_TEST
+Description:
+    Test that the File menu can be opened and displays four menu options: 
+    Open File, Save File, Save As, and Quit.
+Preconditions:
+    a) The JBefunge IDE has been compiled and is running.
+    b) "File" should be visible on the menu bar.
+Execution Steps:
+    1) Click on the menu option titled "File".
+Postconditions:
+    The File menu item displays 4 more menu options:
+    Open File, Save File, Save As, and Quit.
+
+Identifier: COLOR_MENU_TEST
+Description:
+    Test that the Color menu can be opened and displays six menu options:
+    Red, Yellow, Blue, Pink, Green, and Orange.
+Preconditions:
+    a) The JBefunge IDE has been compiled and is running.
+    b) "Color" should be visible on the menu bar.
+Execution Steps:
+    1) Click on the menu option titled "Color".
+Postconditions:
+    The Color menu item opens 6 more menu options:
+    Red, Yellow, Blue, Pink, Green, and Orange.
+
+Identifier: OPTIONS_MENU_TEST
+Description:
+    Test that the Options menu can be opened and displays two checkable menu options:
+    Time Program and Check for End Opcode.
+Preconditions:
+    a) The JBefunge IDE has been compiled and is running.
+    b) "Options" should be visible on the menu bar.
+Execution Steps:
+    1) Click on the menu option titled "Options".
+    2) Click on the Time Program option.
+    3) Click on the menu option titled "Options".
+    4) Click on the Check for End Opcode option.
+Postconditions:
+    a) The options menu item opens 2 more menu options:
+       Time Program and Check for End Opcode.
+    b) A check mark appears by each menu option, indicating it has been enabled.
+
+---FUN-BEFUNGE TESTS---
+
+Identifier: PROGRAM_OUTPUT_TEST
+Description:
+	Verify that the JBefunge IDE will show the expected output of a program.
+Preconditions:
+	a) The JBefunge IDE has been compiled and is running.
+	b) HelloWorld.bf has been downloaded and opened in the IDE.
+Execution Steps:
+	1) Execute the program using the "Run" execution option.
+Postconditions:
+	After execution completes, "Hello World!" should appear in the Output textbox.
+
+Identifier: PROGRAM_COUNTER_TEST
+Description:
+	Verify that the JBefunge IDE program counter is accurate.
+Preconditions:
+	a) The JBefunge IDE has been compiled and is running.
+	b) FizzBuzz.bf has been downloaded and opened in the IDE.
+Execution Steps:
+	1) Execute the program using the "Walk" execution option.
+	2) Observe the cursor as the program executes.
+Postconditions:
+	a) When encountering a '^', the program counter should move up.
+	b) When encountering a 'v', the program counter should move down.
+	c) When encountering a '>', the program counter should move right.
+	d) When encountering a '<', the program counter should move left.
+
+Identifier: STACK_INTEGRITY_TEST
+Description:
+	Verify that that stack is being correctly shown and values are being added and removed from the stack.
+Preconditions:
+	a) The JBefunge IDE has been compiled and is running.
+	b) HelloWorld.bf has been downloaded and opened in the IDE.
+    c) The stack is empty at the beginning.
+Execution Steps:
+	1) Execute the program using the "Walk" execution option.
+	2) Observe that the stack is updated by adding and removing values.
+Postconditions:
+	a) The stack successfully was shown.
+	b) The stack was updated and both added and removed values throughout execution.
+    c) The stack is empty at the end of execution.
+
+Identifier: INVALID_PROGRAM_TEST (EDGE)
+Description:
+	Verify that the JBefunge IDE can not execute non-JBefunge files.
+Preconditions:
+	a) The JBefunge IDE has been compiled and is running.
+	b) README.md has been downloaded and opened in the IDE.
+Execution Steps:
+	1) Execute the program using the "Run" execution option.
+Postconditions:
+    Handling of invalid programs is not specified in the requirements. 
+    Expectation is the IDE handles the execution of invalid programs by failing the execution.
+
+---FUN-STEP TESTS---
+
+Identifier: STEP_THROUGH_TEST
+Description:
+	Verify that the "Step" execution option correctly executes a program one opcode at a time.
+Preconditions:
+	a) The JBefunge IDE has been compiled and is running.
+	b) HelloWorld.bf has been downloaded and opened in the IDE.
+Execution Steps:
+	1) Execute the program using the "Step" execution option.
+	2) Repeat step 1 until the program has been completed.
+Postconditions:
+	a) The program has finished and was executed one opcode at a time.
+	b) Throughout execution, the program appropiately updated the stack.
+	c) Throughout execution, the program appropiately updated the output, resulting in "Hello World!".
+
+---FUN-TIME TESTS---
+
+Identifier: TIME_PROGRAM_ENABLED_TEST
+Description:
+	Verify that the Time Program menu item in the Options menu results in the execution time being shown.
+Preconditions:
+	a) The JBefunge IDE has been compiled and is running.
+	b) FizzBuzz.bf has been downloaded and opened in the IDE.
+	c) The Time Program menu item has been checked under the Options menu.
+Execution Steps:
+	1) Execute the program using the "Run" execution option.
+Postconditions:
+	The system informed the user how long the program took to execute after execution completed.
+
+Identifier: STOP_PROGRAM_WITH_TIME_PROGRAM_ENABLED_TEST
+Description:
+	a) The JBefunge IDE has been compiled and is running.
+	b) FizzBuzz.bf has been downloaded and opened in the IDE.
+	c) The Time Program menu item has been checked under the Options menu.
+Execution Steps:
+	1) Execute the program using the "Mosey" execution option.
+	2) Wait for 5 seconds to pass.
+	3) Stop the execution using the "Stop" option.
+Postconditions:
+	The system informed the user how long the program took to execute after the execution was stopped.
+
+Identifier: TIME_PROGRAM_DISABLED_TEST
+Description:
+	Verify that the program execution time is not shown when the Time Program menu item is not checked.
+Preconditions:
+	a) The JBefunge IDE has been compiled and is running.
+	b) FizzBuff.bf has been downloaded and opened in the IDE.
+	c) The Time Program menu item has not been checked under the Options menu.
+Execution Steps:
+	1) Execute the program using the "Run" execution option.
+Postconditions:
+	Upon program completion, the system will not inform the user of execution time.
+
+
+---PERF-EXECUTION-TIME TESTS---
+
+Identifier: MAC_FIZZBUZZ_PERFORMANCE_TEST
+Description:
+	Verify that the FizzBuzz.bf program will execute using the "Run" execution option in under 30 seconds.
+Preconditions:
+	a) The JBefunge IDE has been compiled and is running on a machine running MacOS.
+	b) FizzBuff.bf has been downloaded and opened in the IDE.
+	c) An external and working stopwatch is available.
+Execution Steps:
+	1) At the same time, execute the program using the "Run" execution option and start the stopwatch.
+	2) End the stopwatch when the program has finished.
+Postconditions:
+	Upon program completion, the stopwatch will display less than 30 seconds.
+
+Identifier: LINUX_FIZZBUZZ_PERFORMANCE_TEST
+Description:
+	Verify that the FizzBuzz.bf program will execute using the "Run" execution option in under 30 seconds.
+Preconditions:
+	a) The JBefunge IDE has been compiled and is running on a machine running Linux based OS.
+	b) FizzBuzz.bf has been downloaded and opened in the IDE.
+	c) An external and working stopwatch is available.
+Execution Steps:
+	1) At the same time, execute the program using the "Run" execution option and start the stopwatch.
+	2) End the stopwatch when the program has finished.
+Postconditions:
+	Upon program completion, the stopwatch will display less than 30 seconds.
+
+Identifier: WINDOWS_FIZZBUZZ_PERFORMANCE_TEST
+Description:
+	Verify that the FizzBuzz.bf program will execute using the "Run" execution option in under 30 seconds.
+Preconditions:
+	a) The JBefunge IDE has been compiled and is running on a machine running Windows.
+	b) FizzBuzz.bf has been downloaded and opened in the IDE.
+	c) An external and working stopwatch is available.
+Execution Steps:
+	1) At the same time, execute the program using the "Run" execution option and start the stopwatch.
+	2) End the stopwatch when the program has finished.
+Postconditions:
+	Upon program completion, the stopwatch will display less than 30 seconds.
+
+Identifier: MOBILE_FIZZBUZZ_PERFORMANCE_TEST
+Description:
+	Verify that the FizzBuzz.bf  program will execute using the "Run" execution option in under 30 seconds.
+Preconditions:
+	a) The JBefunge IDE has been compiled and is running on a mobile device.
+	b) FizzBuzz.bf has been downloaded and opened in the IDE.
+	c) An external and working stopwatch is available.
+Execution Steps:
+	1) At the same time, execute the program using the "Run" execution option and start the stopwatch.
+	2) End the stopwatch when the program has finished.
+Postconditions:
+	Upon program completion, the stopwatch will display less than 30 seconds.
